@@ -63,4 +63,13 @@ export default function createChoroplethMap(mapData, educationData) {
     .attr("stroke", "white")
     .attr("stroke-linejoin", "round")
     .attr("d", path);
+
+  // nation
+  svg
+    .append("path")
+    .datum(topojson.feature(mapData, mapData.objects.nation))
+    .attr("fill", "none")
+    .attr("stroke", "black")
+    .attr("stroke-linejoin", "round")
+    .attr("d", path);
 }
