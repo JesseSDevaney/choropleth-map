@@ -132,4 +132,14 @@ export default function createChoroplethMap(mapData, educationData) {
     .attr("y", "5%")
     .attr("text-anchor", "middle")
     .attr("dominant-baseline", "hanging");
+
+  // title
+  svg
+    .append("text")
+    .attr("id", "description")
+    .text("Percentage of county population with a Bachelor's Degree or Higher")
+    .attr("x", "50%")
+    .attr("y", "10.3%")
+    .attr("text-anchor", "middle")
+    .attr("dominant-baseline", "hanging");
 }
