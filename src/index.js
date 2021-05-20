@@ -10,8 +10,8 @@ function ready() {
       "https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/for_user_education.json"
     ).then((educationResponse) => educationResponse.json()),
   ])
-    .then(([usData, educationData]) => {
-      createChoroplethMap(usData, educationData);
+    .then(([mapData, educationData]) => {
+      createChoroplethMap(mapData, educationData);
     })
     .catch((error) => {
       console.log(error);
