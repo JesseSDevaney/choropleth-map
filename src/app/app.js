@@ -1,5 +1,6 @@
 import * as d3 from "d3";
 import * as topojson from "topojson-client";
+import legend from "./legend";
 import "./app.scss";
 
 export default function createChoroplethMap(mapData, educationData) {
@@ -19,7 +20,16 @@ export default function createChoroplethMap(mapData, educationData) {
 
   const educationMin = d3.min(educationData, (d) => d["bachelorsOrHigher"]);
   const educationMax = d3.max(educationData, (d) => d["bachelorsOrHigher"]);
-  const colors = ["#ccccff", "#9999ff", "#6666ff", "#0000e6", "#000080"];
+  const colors = [
+    "#d6e0f5",
+    "#adc2eb",
+    "#85a3e0",
+    "#5c85d6",
+    "#3366cc",
+    "#2952a3",
+    "#1f3d7a",
+    "#142952",
+  ];
   const colorScale = d3
     .scaleQuantize()
     .domain([educationMin, educationMax])
@@ -72,4 +82,18 @@ export default function createChoroplethMap(mapData, educationData) {
     .attr("stroke", "black")
     .attr("stroke-linejoin", "round")
     .attr("d", path);
+
+  // legend
+  svg
+    .append("g")
+    .attr("id", "legend")
+    .attr("transform", `translate(${width - 360}, 120)`)
+    .append(() =>
+      legend({
+        color: colorScale,
+        title: "Bachelor's or Higher (%)",
+        width: 200,
+        tickFormat: ".1f",
+      })
+    );
 }
