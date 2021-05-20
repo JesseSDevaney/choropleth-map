@@ -48,4 +48,12 @@ export default function createChoroplethMap(usData, educationData) {
       return countyEducation["bachelorsOrHigher"];
     });
 
+  // states
+  svg
+    .append("path")
+    .datum(topojson.mesh(usData, usData.objects.states, (a, b) => a !== b))
+    .attr("fill", "none")
+    .attr("stroke", "white")
+    .attr("stroke-linejoin", "round")
+    .attr("d", path);
 }
