@@ -122,4 +122,14 @@ export default function createChoroplethMap(mapData, educationData) {
         tickFormat: ".1f",
       })
     );
+
+  // title
+  svg
+    .append("text")
+    .attr("id", "title")
+    .text("Education Level by County")
+    .attr("x", "50%")
+    .attr("y", "5%")
+    .attr("text-anchor", "middle")
+    .attr("dominant-baseline", "hanging");
 }
