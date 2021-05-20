@@ -2,4 +2,21 @@
   max-height: 100%;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 4px 20px, rgba(0, 0, 0, 0.23) 0px 2px 6px;
+
+  .county {
+    &:hover {
+      stroke: black;
+    }
+  }
+}
+
+#tooltip {
+  width: calc(250px - 2rem);
+  position: fixed;
+  background: black;
+  color: white;
+  opacity: 0.9;
+  border-radius: 5px;
+  padding: 1rem;
+  white-space: pre;
 }

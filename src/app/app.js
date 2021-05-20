@@ -63,6 +63,32 @@ export default function createChoroplethMap(mapData, educationData) {
     .attr("data-education", (d) => {
       const countyEducation = educationData[d.educationIndex];
       return countyEducation["bachelorsOrHigher"];
+    })
+    .on("mouseover", (event, d) => {
+      const { x, y } = event;
+
+      const { fips, state, area_name, bachelorsOrHigher } =
+        educationData[d.educationIndex];
+
+      const tooltipText =
+        `State: ${state}` +
+        `\nCounty: ${area_name}` +
+        `\nBachelors or Higher: ${bachelorsOrHigher}%` +
+        `\nID: ${fips}`;
+
+      d3.select("#root")
+        .append("div")
+        .attr("id", "tooltip")
+        .style("left", `${x - 125}px`)
+        .style("top", `${y - 170}px`)
+        .attr(
+          "data-education",
+          educationData[d.educationIndex]["bachelorsOrHigher"]
+        )
+        .text(tooltipText);
+    })
+    .on("mouseout", () => {
+      d3.select("#tooltip").remove();
     });
 
   // states
