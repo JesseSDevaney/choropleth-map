@@ -1,7 +1,11 @@
 #chart {
   max-height: 100%;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 4px 20px, rgba(0, 0, 0, 0.23) 0px 2px 6px;
+
+  #chart-border {
+    fill: none;
+    stroke: black;
+    stroke-width: 1;
+  }
 
   #title {
     font-size: 2.3rem;

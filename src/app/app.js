@@ -11,7 +11,18 @@ export default function createChoroplethMap(mapData, educationData) {
     .select("#root")
     .append("svg")
     .attr("id", "chart")
+    .attr("width", "100%")
+    .attr("height", "100%")
     .attr("viewBox", `0 0 ${width} ${height}`);
+
+  // border
+  svg
+    .append("rect")
+    .attr("id", "chart-border")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", width)
+    .attr("height", height);
 
   // counties
   // path: reads and renders the object given to it
