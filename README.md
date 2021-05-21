@@ -10,5 +10,5 @@ View the live project in my **Codepen:** [Choropleth Map](https://codepen.io/jes
 
 ## License
 
-Copyright (c) 2021 Jesse S Devaney <jessesdevaney@gmail.com>  
+Copyright (c) 2021 Jesse S. Devaney  
 MIT License
