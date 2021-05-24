@@ -1,6 +1,6 @@
 # FreeCodeCamp: Visualizing Data with a Choropleth Map
 
-[![GitHub](https://img.shields.io/github/license/jessesdevaney/choropleth-map?style=flat-square)](https://github.com/jessesdevaney/choropleth-map/blob/main/LICENSE)
+[![GitHub](https://img.shields.io/github/license/jessesdevaney/freecodecamp-choropleth-map?style=flat-square)](https://github.com/jessesdevaney/freecodecamp-choropleth-map/blob/main/LICENSE)
 
 ## Description
 
